@@ -45,7 +45,7 @@ def main():
         task = netmiko_send_command,
         command_string = "show arp"
     )
-    
+
     print("Getting results...")
     csv_rows = []
     change_color = True
@@ -56,7 +56,6 @@ def main():
                 table.add_row(device, res_row[0], res_row[1], res_row[2], res_row[3], res_row[4], res_row[5], style=colorize_row(change_color))
                 csv_rows.append([device, res_row[0], res_row[1], res_row[2], res_row[3], res_row[4], res_row[5]])
         
-        table.add_row()
         if change_color == True:
             change_color = False
         else:
